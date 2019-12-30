@@ -22,7 +22,7 @@ var observer = new MutationObserver(function(mutations) {
   if ($(leftContainer).length) {
     
     if($("#tcAppVideoMeta").length === 0) {
-      const appComponent = $("<app-counter>");
+      const appComponent = $("<app-tag-counter>");
       $(leftContainer).prepend(appComponent);
     }
     this.disconnect();

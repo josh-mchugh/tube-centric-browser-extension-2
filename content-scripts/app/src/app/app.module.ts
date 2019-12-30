@@ -1,26 +1,28 @@
-import { Injector, NgModule } from "@angular/core";
-import { createCustomElement } from "@angular/elements";
-import { BrowserModule } from "@angular/platform-browser";
-import "zone.js";
+import 'zone.js';
 
-import { AppComponent } from "./app.component";
+import { Injector, NgModule } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { TagCounterComponent } from './components/tagCounter/app.tag-counter';
+import { AppTagCounterService } from './components/tagCounter/services/app-tag-counter.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    TagCounterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AppTagCounterService],
+  bootstrap: [TagCounterComponent]
 })
 export class AppModule {
 
   constructor(private injector: Injector) { }
 
   ngBootstrap() {
-    const custom = createCustomElement(AppComponent, {injector: this.injector});
-    customElements.define("app-counter", custom);
+    const custom = createCustomElement(TagCounterComponent, {injector: this.injector});
+    customElements.define('app-counter', custom);
   }
 }
