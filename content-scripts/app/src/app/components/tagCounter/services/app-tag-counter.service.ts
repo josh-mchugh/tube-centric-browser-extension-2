@@ -41,17 +41,25 @@ export class AppTagCounterService {
     return this.descriptionTags.length;
   }
 
+  public getTotalTagsUsedCount(): number {
+    return this.getTotalTagsUsed().size;
+  }
+
   private getTagsInTitle(): string[] {
-    if (!this.tags) {
+    if (!this.tags || !this.title) {
       return [];
     }
     return this.tags.filter(tag => this.title.toLowerCase().includes(tag.toLowerCase()));
   }
 
   private getTagsInDescription(): string[] {
-    if (!this.tags) {
+    if (!this.tags || !this.description) {
       return [];
     }
     return this.tags.filter(tag => this.description.toLowerCase().includes(tag.toLowerCase()));
+  }
+
+  private getTotalTagsUsed(): Set<string> {
+    return new Set([...this.titleTags, ...this.descriptionTags]);
   }
 }

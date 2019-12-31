@@ -21,16 +21,13 @@ export class TagCounterComponent implements OnInit, OnDestroy {
   private tagsObserver: DomObserver;
 
   public constructor(public counterService: AppTagCounterService) {
-    this.titleObserver = new DomObserver(this.titleSelector, this.handleTitleChange);
-    this.descriptionObserver = new DomObserver(this.descriptionSelector, this.handleDescriptionChange);
-    this.tagsObserver = new DomObserver(this.tagsContainerSelector, this.handleTagsChange);
   }
 
   ngOnInit() {
     this.initializeValues();
-    this.titleObserver.observe();
-    this.descriptionObserver.observe();
-    this.tagsObserver.observe();
+    this.titleObserver = new DomObserver(this.titleSelector, this.handleTitleChange).observe();
+    this.descriptionObserver = new DomObserver(this.descriptionSelector, this.handleDescriptionChange).observe();
+    this.tagsObserver = new DomObserver(this.tagsContainerSelector, this.handleTagsChange).observe();
   }
 
   ngOnDestroy() {
