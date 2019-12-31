@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "jquery": "^3.4.1",
+    "uri-template": "^1.0.1",
     "webextension-polyfill": "^0.6.0"
   },
   "devDependencies": {
