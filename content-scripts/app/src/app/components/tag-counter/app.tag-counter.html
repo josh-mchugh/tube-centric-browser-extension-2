@@ -1,0 +1,28 @@
+<div class="tc-scope">
+  <div class="container">
+    <div>
+      <div class="value">
+        {{counterService.getTitleTagsCount()}} / {{counterService.getTagsCount()}}
+      </div>
+      <div class="label">
+        Tags in Title
+      </div>
+    </div>
+    <div>
+      <div class="value">
+        {{counterService.getDescriptionTagsCount()}} / {{counterService.getTagsCount()}}
+      </div>
+      <div class="label">
+        Tags in Description
+      </div>
+    </div>
+    <div>
+      <div class="value">
+        {{(counterService.getTitleTagsCount() + counterService.getDescriptionTagsCount())}} / {{counterService.getTagsCount()}}
+      </div>
+      <div class="label">
+        Tags Used
+      </div>
+    </div>
+  </div>
+</div>
