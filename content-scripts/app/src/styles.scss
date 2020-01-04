@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "bootstrap/scss/_functions";
+@import "bootstrap/scss/_variables";
+@import "bootstrap/scss/_mixins";
+
+@import "bootstrap/scss/_forms";
+@import "bootstrap/scss/_buttons";
+@import "bootstrap/scss/_transitions";
+@import "bootstrap/scss/_modal";
+@import "bootstrap/scss/_utilities";
+
+.tc-scope {
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+}

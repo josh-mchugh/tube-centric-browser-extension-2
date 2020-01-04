@@ -42,6 +42,9 @@ function initTagCounter() {
 
         const component = $("<app-tag-counter>");
         $(mutation.target).prepend(component);
+
+        const tagSearchComponent = $("<app-tag-search>");
+        $(mutation.target).find(".tags").before(tagSearchComponent);
         
         const componentScript = $("<script>")
           .attr("type", "text/javascript")
@@ -49,7 +52,6 @@ function initTagCounter() {
         componentScript.insertAfter(component);
   
         this.disconnect();
-
       }
     });
   });
